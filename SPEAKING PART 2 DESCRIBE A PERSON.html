@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms Lê Hằng English - IELTS Speaking Part 2: Describe a Person</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fafbfc;
+            --text-color: #4a5568;
+            --header-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            
+            /* Pastel Theme Palette */
+            --tab-idol-bg: #f3e5f5;
+            --tab-idol-active: #d1c4e9;
+            --tab-idol-text: #673ab7;
+            
+            --tab-peer-bg: #e8f5e9;
+            --tab-peer-active: #c8e6c9;
+            --tab-peer-text: #2e7d32;
+            
+            --tab-old-bg: #e3f2fd;
+            --tab-old-active: #bbdefb;
+            --tab-old-text: #1565c0;
+
+            --high-score-color: #e91e63;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding-bottom: 60px;
+        }
+
+        header {
+            background: var(--header-bg);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        header h1 { font-family: 'Comfortaa', cursive; color: #4a4a4a; font-size: 2.3rem; margin-bottom: 10px; }
+        header p { font-size: 1.1rem; color: #5f5f5f; font-weight: 600; }
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation Menu */
+        .tab-navigation {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 30px;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+            padding: 10px 0;
+            z-index: 100;
+        }
+        .tab-btn {
+            border: none;
+            padding: 14px 24px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .tab-btn[data-tab="famous"] { background-color: var(--tab-idol-bg); color: var(--tab-idol-text); }
+        .tab-btn[data-tab="famous"].active { background-color: var(--tab-idol-text); color: #fff; }
+        .tab-btn[data-tab="peer"] { background-color: var(--tab-peer-bg); color: var(--tab-peer-text); }
+        .tab-btn[data-tab="peer"].active { background-color: var(--tab-peer-text); color: #fff; }
+        .tab-btn[data-tab="old"] { background-color: var(--tab-old-bg); color: var(--tab-old-text); }
+        .tab-btn[data-tab="old"].active { background-color: var(--tab-old-text); color: #fff; }
+
+        .tab-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.08); }
+
+        .tab-content { display: none; animation: fadeIn 0.4s ease-in-out forwards; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Strategy Box */
+        .strategy-box {
+            background-color: #fff;
+            border-left: 6px solid #fcb69f;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .strategy-flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px; font-weight: 700; }
+        .flow-step { background: #f1f3f5; padding: 6px 12px; border-radius: 8px; font-size: 0.9rem; }
+
+        /* Mapping Topics Box */
+        .mapping-box {
+            background-color: #fff8e1;
+            border: 1px dashed #ffe082;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .mapping-box h4 { color: #b78103; font-size: 1rem; margin-bottom: 8px; text-transform: uppercase; }
+        .mapping-box ul { list-style-type: none; padding-left: 5px; }
+        .mapping-box li { font-size: 0.9rem; margin-bottom: 4px; font-weight: 600; color: #5d4037;}
+
+        /* Card Section */
+        .topic-section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 30px 0 15px 0;
+            padding-bottom: 5px;
+            border-bottom: 2px dashed #ccc;
+        }
+        
+        /* 4-Square Table Layout for Outline */
+        .outline-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .outline-grid { grid-template-columns: 1fr; }
+        }
+        .outline-cell {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.01);
+        }
+        .outline-cell h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 4px;
+        }
+        .outline-cell ul { list-style-type: square; padding-left: 20px; font-size: 0.9rem; color: #555;}
+        .outline-cell li { margin-bottom: 4px; }
+
+        /* Sample Answer Box */
+        .sample-box {
+            background: #fdfcf7;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #adcbe3;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+            margin-top: 15px;
+        }
+        .sample-box h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #2c3e50; }
+        .sample-text { font-style: italic; font-size: 1rem; color: #333; text-align: justify; }
+
+        /* Interactive Popups for Vocab */
+        .vocab-popup {
+            position: relative;
+            background-color: #fff0f3;
+            color: var(--high-score-color);
+            border-bottom: 2px dashed var(--high-score-color);
+            padding: 0 3px;
+            cursor: help;
+            font-style: normal;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+        .vocab-popup::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 130%;
+            left: 50%;
+            transform: translateX(-50%) translateY(5px);
+            background: #2d3748;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-style: normal;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.2s ease;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+        .vocab-popup:hover::after { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+        .tag-info { font-size: 0.85rem; font-weight: 600; display: inline-block; padding: 2px 8px; background: #e2e8f0; border-radius: 12px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Ms Lê Hằng English</h1>
+        <p>🎯 IELTS Speaking Part 2 - Topic: DESCRIBE A PERSON (Interactive System) 🎯</p>
+    </header>
+
+    <div class="container">
+        
+        <!-- Quy tắc và chiến lược chung -->
+        <div class="strategy-box">
+            <h3>💡 Tiêu Chí Chuẩn Bài Nói Part 2 (150 từ ~ 1.5 - 2 phút)</h3>
+            <div class="strategy-flow">
+                <span class="flow-step">1. Intro: Paraphrase đề bài (1 câu)</span> ➜ 
+                <span class="flow-step">2. Body: Trả lời lần lượt các ý Cue Card (mỗi ý từ 2-3 câu dài)</span> ➜ 
+                <span class="flow-step">3. Conclusion: Nêu cảm nghĩ tổng kết (1 câu)</span>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tab-navigation">
+            <button class="tab-btn active" data-tab="famous">TAB 1: DESCRIBE A FAMOUS PERSON (IDOL)</button>
+            <button class="tab-btn" data-tab="peer">TAB 2: DESCRIBE A PEER / FRIEND / CHILD (BESTIE)</button>
+            <button class="tab-btn" data-tab="old">TAB 3: DESCRIBE AN OLD PERSON (MOM/AUNT)</button>
+        </div>
+
+        <!-- ==================== TAB 1: FAMOUS PERSON (IDOL) ==================== -->
+        <div id="famous" class="tab-content active">
+            <div class="mapping-box">
+                <h4>🎯 Các đề thuộc bộ đề có thể áp dụng chung ý tưởng IDOL (Rosé):</h4>
+                <ul>
+                    <li>• Describe a famous person you would like to meet</li>
+                    <li>• Describe a person who is good at learning and speaking new languages (English/Korean)</li>
+                    <li>• Describe a person who initially wore unusually bold and artistic outfits</li>
+                </ul>
+            </div>
+
+            <div class="topic-section-title">Đề mẫu: Describe a famous person you would like to meet (Rosé)</div>
+            <div class="tag-info">Target Band: 7.0+ | Từ vựng chủ đề tự nhiên</div>
+
+            <!-- Bảng Ô vuông Outline Phản Xạ -->
+            <div class="outline-grid">
+                <div class="outline-cell">
+                    <h5>1. Who this person is & How you know them</h5>
+                    <ul>
+                        <li>Rosé from BLACKPINK (all-time idol)</li>
+                        <li>Talented & internationally famous singer</li>
+                        <li>First came across her music online during debut</li>
+                        <li>Blown away by her charisma</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>2. What kind of music/style they have</h5>
+                    <ul>
+                        <li>Performs K-pop, blends pop, soft rock, and indie</li>
+                        <li>Stands out from many other artists</li>
+                        <li>Bold and artistic fashion sense (unusual combinations)</li>
+                        <li>Distinctive vocal color (emotional & powerful)</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>3. Why they are successful (Languages / Background)</h5>
+                    <ul>
+                        <li>Born in Australia, moved to South Korea to chase dream</li>
+                        <li>Fluent in English and Korean (gifted at languages)</li>
+                        <li>Won 1st place in YG Entertainment audition (>300 contestants)</li>
+                        <li>Broken global records ("On The Ground", "Gone")</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>4. Why you want to meet them & Conclusion</h5>
+                    <ul>
+                        <li>Inspiring story of hard work and resilience</li>
+                        <li>Want to attend her live concert in the future</li>
+                        <li>Unquestionably the artist I genuinely admire most</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bài Mẫu Hoàn Chỉnh -->
+            <div class="sample-box">
+                <h4>📝 Bài mẫu hoàn chỉnh (Sample Answer):</h4>
+                <div class="sample-text">
+                    "Today, I’d like to talk about Rosé from BLACKPINK, a talented and <span class="vocab-popup" data-tooltip="Nổi tiếng trên thị trường quốc tế">internationally famous</span> singer who has been my all-time idol. I first <span class="vocab-popup" data-tooltip="Tình cờ biết đến / bắt gặp">came across</span> her music online when BLACKPINK debuted, and <span class="vocab-popup" data-tooltip="Bị cuốn hút hoàn toàn bởi thần thái">completely blown away by her charisma</span>. <br><br>
+                    Rosé mainly performs K-pop, but her music often blends elements of pop, soft rock, and indie, which makes her <span class="vocab-popup" data-tooltip="Nổi bật, khác biệt so với số đông">stand out from</span> many other artists. <span class="vocab-popup" data-tooltip="Nếu tôi nhớ không nhầm">If my memory serves me right</span>, she was born in Australia and later moved to South Korea to <span class="vocab-popup" data-tooltip="Theo đuổi ước mơ">pursue her dream</span>. She is exceptionally gifted at languages, speaking both English and Korean fluently. Before debuting, she competed against more than three hundred contestants in an audition, and she won first place, showing how extraordinary her talent is. Aside from music, she is also famous for wearing unusually bold, artistic outfits that challenge traditional fashion norms. <br><br>
+                    One of the main reasons I like her so much is her <span class="vocab-popup" data-tooltip="Màu giọng đặc trưng, độc bản">distinctive vocal color</span>, which is both emotional and powerful. She has broken several global records and won numerous awards. If I had the chance in the future, I would definitely attend her concert to experience her music live. She is <span class="vocab-popup" data-tooltip="Chắc chắn không cần bàn cãi">unquestionably</span> the only singer I genuinely admire."
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 2: PEER / FRIEND / CHILD (BESTIE) ==================== -->
+        <div id="peer" class="tab-content">
+            <div class="mapping-box">
+                <h4>🎯 Các đề thuộc bộ đề có thể áp dụng chung ý tưởng BESTIE (Hương / Minh / Linh / Hoa):</h4>
+                <ul>
+                    <li>• Describe a friend from your childhood / A good friend who is important to you</li>
+                    <li>• Describe a person who solved a problem in a smart way / good at planning</li>
+                    <li>• Describe a person who is gifted at singing or has a special talent</li>
+                    <li>• Describe a person you initially disliked but eventually became good friends with</li>
+                    <li>• Describe a well-dressed person you know</li>
+                    <li>• Describe a time when a friend persuaded you to do something</li>
+                    <li>• Describe a child who loves drawing/painting (Có thể biến tấu thành Hương lúc nhỏ hoặc cháu của mình)</li>
+                </ul>
+            </div>
+
+            <div class="topic-section-title">Đề mẫu: Describe a good friend who is important / solved a problem smartly (Hương)</div>
+            <div class="tag-info">Target Band: 7.0+ | Ý tưởng linh hoạt, dễ nói</div>
+
+            <!-- Bảng Ô vuông Outline Phản Xạ -->
+            <div class="outline-grid">
+                <div class="outline-cell">
+                    <h5>1. Who they are & How you met</h5>
+                    <ul>
+                        <li>My closest friend named Huong (same age)</li>
+                        <li>Known each other for more than 5 years since high school</li>
+                        <li>First met when we became deskmates</li>
+                        <li>Gradually grew closer over time</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>2. Their key personality & Talents</h5>
+                    <ul>
+                        <li>Incredibly intelligent and well-dressed</li>
+                        <li>Remarkable ability to stay calm under pressure</li>
+                        <li>Loves reading books (romance novels)</li>
+                        <li>Gifted at singing soft pop/ballads (makes her stand out)</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>3. A specific story (Solving a problem / Persuading)</h5>
+                    <ul>
+                        <li>Got lost in an amusement park last year</li>
+                        <li>Instead of panicking, she patiently checked location on phone</li>
+                        <li>Found me within minutes (smart problem-solving skills)</li>
+                        <li>Persuaded me to join an English contest to step out of my comfort zone</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>4. Why they are important & Conclusion</h5>
+                    <ul>
+                        <li>Always gives me honest and thoughtful advice</li>
+                        <li>Her voice and presence always brighten my mood</li>
+                        <li>Truly admire her; hope our friendship lasts for many years</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bài Mẫu Hoàn Chỉnh -->
+            <div class="sample-box">
+                <h4>📝 Bài mẫu hoàn chỉnh (Sample Answer):</h4>
+                <div class="sample-text">
+                    "Today, I'm going to talk about one of the most important friends in my life, Huong. We are the same age and have known each other for more than five years, ever since high school when we first <span class="vocab-popup" data-tooltip="Bạn cùng bàn">became deskmates</span> and quickly grew close. <br><br>
+                    What impresses me the most about Huong is that she is <span class="vocab-popup" data-tooltip="Cực kỳ thông minh">incredibly intelligent</span> and gifted at many things, including singing and fashion design. She has a <span class="vocab-popup" data-tooltip="Khả năng giữ bình tĩnh đáng kinh ngạc">remarkable ability to stay calm</span> in challenging situations and always comes up with practical solutions. <span class="vocab-popup" data-tooltip="Ký ức hiện về rõ mồn một">I still remember vividly</span> a time when I got lost in a crowded amusement park. Instead of panicking, she calmly checked my location on her phone and managed to find me within minutes. That really showed her smart problem-solving skills. Besides that, she is a well-dressed person who loves art and often helps me style my outfits. <br><br>
+                    She is someone I truly trust because she always gives me honest and thoughtful advice. Last year, she successfully persuaded me to join a speaking contest to <span class="vocab-popup" data-tooltip="Bước ra khỏi vùng an toàn">step out of my comfort zone</span>. Overall, I truly admire her intelligence and kindness, and I hope our friendship will <span class="vocab-popup" data-tooltip="Kéo dài trong nhiều năm nữa">last for many more years</span>."
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 3: AN OLD PERSON / FAMILY (MOM) ==================== -->
+        <div id="old" class="tab-content">
+            <div class="mapping-box">
+                <h4>🎯 Các đề thuộc bộ đề có thể áp dụng chung ý tưởng FAMILY/MOM (Mẹ / Dì / Anh chị em):</h4>
+                <ul>
+                    <li>• Describe a person you know who has a successful business / works in a successful company</li>
+                    <li>• Describe an older person you enjoy talking to / inspired you to do something interesting</li>
+                    <li>• Describe a person who loves to grow plants at home or in the garden (Aunt/Mom)</li>
+                    <li>• Describe a person who likes to look after the natural world / often helps others</li>
+                    <li>• Describe a person who makes plans a lot and is good at planning</li>
+                    <li>• Describe a person you know who would like to choose a career in the medical field</li>
+                </ul>
+            </div>
+
+            <div class="topic-section-title">Đề mẫu: Describe an older person you enjoy talking to / has a successful business (Mom)</div>
+            <div class="tag-info">Target Band: 7.0+ | Cảm xúc, chân thật, từ vựng ghi điểm</div>
+
+            <!-- Bảng Ô vuông Outline Phản Xạ -->
+            <div class="outline-grid">
+                <div class="outline-cell">
+                    <h5>1. Who this person is & Their job</h5>
+                    <ul>
+                        <li>My mother, an older person in her early forties</li>
+                        <li>Runs a small garment/tailor company right at our house</li>
+                        <li>Manages more than 30 employees</li>
+                        <li>Work is incredibly busy with tight schedules</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>2. What they do daily (Planning & Plants hobby)</h5>
+                    <ul>
+                        <li>Deals with customer orders & unexpected problems</li>
+                        <li>Good at planning out production timelines perfectly</li>
+                        <li>Loves to grow plants & organic vegetables in the backyard corner</li>
+                        <li>Spends an hour watering them to look after the natural world</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>3. What you talk about & How they inspired you</h5>
+                    <ul>
+                        <li>Love hearing her stories about how she handles difficult situations</li>
+                        <li>Shares valuable lessons about patience and hard work</li>
+                        <li>Inspired me to attend a meaningful course (teaching/medical)</li>
+                        <li>Encouraged me when I doubted my own ability</li>
+                    </ul>
+                </div>
+                <div class="outline-cell">
+                    <h5>4. Your feelings & Conclusion</h5>
+                    <ul>
+                        <li>Incredibly wise, always gives practical advice</li>
+                        <li>Broadens my perspective and mindset</li>
+                        <li>She is one of my biggest inspirations in life</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bài Mẫu Hoàn Chỉnh -->
+            <div class="sample-box">
+                <h4>📝 Bài mẫu hoàn chỉnh (Sample Answer):</h4>
+                <div class="sample-text">
+                    "Today, I’m going to talk about my mom, who is an older person with a really interesting life and someone I <span class="vocab-popup" data-tooltip="Thực sự thích trò chuyện cùng">truly enjoy talking to</span>. She is in her early forties and runs a successful garment company right at our house, where she manages more than thirty employees. <br><br>
+                    Her daily life is incredibly busy but meaningful. She is someone who makes plans a lot and is expert at scheduling production timelines. Despite the heavy pressure, she always maintains a positive attitude and a strong <span class="vocab-popup" data-tooltip="Tinh thần trách nhiệm">sense of responsibility</span>. Besides her business, she is also passionate about looking after the natural world, spending time growing organic vegetables and flowers in our small backyard to <span class="vocab-popup" data-tooltip="Thư giãn đầu óc">relax her mind</span>. <br><br>
+                    Whenever we talk, I love hearing her stories about how she built her business <span class="vocab-popup" data-tooltip="Từ hai bàn tay trắng / từ con số 0">from scratch</span> and handled difficult situations. She recently inspired me to take a new course by pushing me to challenge myself. I enjoy talking to her because she is <span class="vocab-popup" data-tooltip="Cực kỳ thông thái, khôn ngoan">incredibly wise</span> and always gives me practical advice. Her lessons have broadened my perspective, and she remains one of my biggest inspirations in life."
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Tab Switching Logic
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all buttons
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked button
+                tab.classList.add('active');
+
+                // Hide all contents
+                contents.forEach(c => c.classList.remove('active'));
+                // Show targeted content
+                const targetId = tab.getAttribute('data-tab');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
